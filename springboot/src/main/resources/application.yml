@@ -1,0 +1,23 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8888
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/houserentvue4?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  jackson:
+    #指定日期格式，比如yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd
+    #指定日期格式化时区
+    time-zone: GMT+8
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.Entity
+#  config-location: classpath:mybatis-config.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印SQL日志到控制台

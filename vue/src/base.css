@@ -1,0 +1,178 @@
+/* flex */
+.flex{
+    display: flex;
+}
+.flex-justify-content-center{
+    display: flex;
+    justify-content: center;
+}
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-aj-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+  }
+
+
+.flex-direction-column{
+    display: flex;
+    flex-direction:column
+}
+
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.grey{
+    color: gray;
+}
+
+.margin-right-20{
+    margin-right: 20px;
+}
+.text-right{
+    text-align: right;
+}
+.width-100{
+    width: 100px;
+}
+.imgstyle {
+    width: 250px;
+    height: 150px;
+  }
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+.al-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a-center{
+    display: flex;
+    align-items: center;
+}
+.flex-colum-center{
+    display: flex;
+    align-items: center;
+}
+.jc-between{
+    justify-content: space-between;
+}
+.fixedright{
+    position: fixed;
+    right: 0;
+    bottom: 10PX;
+}
+.padding-right-40{
+    padding-right: 20px;
+}
+.white{
+  color: #fff;
+}
+
+
+
+/* margin */
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+
+.margin-left-10{
+    margin-left: 10px;
+}
+.margin-right-10{
+    margin-right: 10px;
+}
+
+
+
+.margin-top-5{
+    margin-top: 5px;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+.margin-top-15{
+    margin-top: 15px;
+}
+.margin-top-20{
+    margin-top: 20px;
+}
+.margin-left-20{
+    margin-left: 20px;
+}
+.margin-left-40{
+    margin-left: 40px;
+}
+
+.margin-right-5{
+    margin-right: 5px;
+}
+
+/* padding */
+.padding-left-5{
+    padding-left: 5px;
+}
+.padding-left-10{
+    padding-left: 10px;
+}
+.padding-right-10{
+    padding-right: 10px;
+}
+
+
+.padding-left-20{
+    padding-left: 20px;
+}
+
+.padding-left-40{
+    padding-left: 40px;
+}
+.padding-right-40{
+    padding-right: 40px;
+}
+
+
+/* font */
+.font-size-40{
+    font-size: 40px;
+}
+.font-size-30{
+    font-size: 30px;
+}
+.font-size-20{
+    font-size: 20px;
+}
+.font-size-10{
+    font-size: 10px;
+}
+.font-size-15{
+    font-size: 15px;
+}
+
+
+/* 变成小手 */
+.cursorPointer{
+    cursor: pointer;
+}

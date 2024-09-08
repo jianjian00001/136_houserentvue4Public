@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.Dao.RemarkDao">
+	<select id="getPageRemark" resultType="com.example.Entity.Remark">
+		SELECT * from remark LEFT JOIN user on user.id=remark.userid LEFT JOIN house on house.id=remark.houseid
+		<where>
+			<if test="houseid !=null and houseid !=''">
+				remark.houseid=#{houseid}
+			</if>
+		</where>
+	</select>
+
+
+	<select id="getPageRemarkAll" resultType="com.example.Entity.Remark">
+		SELECT * from remark LEFT JOIN user on user.id=remark.userid LEFT JOIN house on house.id=remark.houseid
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+		</where>
+	</select>
+
+	<select id="getPageRemarkByPerson" resultType="com.example.Entity.Remark">
+		SELECT * from remark LEFT JOIN user on user.id=remark.userid LEFT JOIN house on house.id=remark.houseid
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+			and remark.userid=#{userid}
+		</where>
+	</select>
+</mapper>

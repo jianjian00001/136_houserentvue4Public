@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.Dao.HouseDao">
+	<select id="getPage" resultType="com.example.Entity.House">
+		SELECT * from house LEFT JOIN user on user.id=house.houseuserid
+		LEFT JOIN housetype on housetype.id=house.housetypeid
+		LEFT JOIN housedetail ON housedetail.id=house.housedetailid
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+		</where>
+	</select>
+
+	<select id="getPageHouseByPerson" resultType="com.example.Entity.House">
+		SELECT * from house LEFT JOIN user on user.id=house.houseuserid
+		LEFT JOIN housetype on housetype.id=house.housetypeid
+		LEFT JOIN housedetail ON housedetail.id=house.housedetailid
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+			and houseuserid=#{userid}
+		</where>
+	</select>
+
+	<select id="getPageHouseNormal" resultType="com.example.Entity.House">
+		SELECT * from house LEFT JOIN user on user.id=house.houseuserid
+		LEFT JOIN housetype on housetype.id=house.housetypeid
+		LEFT JOIN housedetail ON housedetail.id=house.housedetailid
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+			and house.housestatus=0
+		</where>
+	</select>
+
+
+	<select id="getAllData" resultType="com.example.Entity.User">
+		select * from user LEFT JOIN userrole on user.id=userrole.userid LEFT JOIN role on userrole.roleid=role.id
+		LEFT JOIN room on user.roomname=room.roomname LEFT JOIN building on user.buildname=building.buildname
+		<where>
+			<if test="username !=null and username !=''">
+				username=#{username}
+			</if>
+			<if test="rolecode !=null and rolecode !=''">
+				and rolecode=#{rolecode}
+			</if>
+				and length(user.buildname)>0
+
+		</where>
+	</select>
+
+
+	<select id="getOneData" resultType="com.example.Entity.User">
+		select * from user LEFT JOIN userrole on user.id=userrole.userid LEFT JOIN role on userrole.roleid=role.id
+		LEFT JOIN room on user.roomname=room.roomname LEFT JOIN building on user.buildname=building.buildname
+		<where>
+			<if test="username !=null and username !=''">
+				username=#{username}
+			</if>
+			and length(user.buildname)>0 and user.id=#{id}
+		</where>
+	</select>
+
+
+
+	<insert id="saveUser" parameterType="com.example.Entity.User">
+		insert into user(username,password)
+		values (#{username}, #{password})
+	</insert>
+</mapper>

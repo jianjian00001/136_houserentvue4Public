@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.Dao.BookTimeDao">
+	<select id="getPageHouseBooktByPerson" resultType="com.example.Entity.BookHouse">
+		SELECT * from bookhouse LEFT JOIN user
+		on bookhouse.bookuserid=user.id LEFT JOIN house on bookhouse.houseid=house.id
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+			and bookuserid=#{userid}
+		</where>
+	</select>
+
+	<select id="getPageHouseBooktByHouse" resultType="com.example.Entity.BookHouse">
+		SELECT * from bookhouse LEFT JOIN user
+		on bookhouse.bookuserid=user.id LEFT JOIN house on bookhouse.houseid=house.id
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+			and house.houseuserid=#{userid}
+		</where>
+	</select>
+
+
+	<select id="getPageHouseBooktAll" resultType="com.example.Entity.BookHouse">
+		SELECT * from bookhouse LEFT JOIN user
+		on bookhouse.bookuserid=user.id LEFT JOIN house on bookhouse.houseid=house.id
+		<where>
+			<if test="housename !=null and housename !=''">
+				house.housename=#{housename}
+			</if>
+		</where>
+	</select>
+</mapper>
